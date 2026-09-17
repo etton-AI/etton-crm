@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ETTON CRM · 月度经营报表（公网版）</title>
+  <style>
+    :root {
+      --blue: #0090D8;
+      --navy: #004890;
+      --orange: #F07800;
+      --good: #16a34a;
+      --watch: #F07800;
+      --risk: #dc2626;
+      --bg: #f4f6f9;
+      --card: #ffffff;
+      --border: #e5e9f0;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --topbar: #10212f;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+      background: var(--bg); color: var(--text); font-size: 14px; line-height: 1.5;
+    }
+
+    /* ===== 顶栏 ===== */
+    .topbar {
+      background: var(--topbar); color: #fff; display: flex; align-items: center;
+      gap: 24px; padding: 0 20px; height: 56px; position: sticky; top: 0; z-index: 100;
+    }
+    .brand { font-size: 17px; font-weight: 700; letter-spacing: .5px; white-space: nowrap; }
+    .brand .accent { color: var(--blue); }
+    .nav { display: flex; gap: 4px; flex: 1; overflow-x: auto; }
+    .nav button {
+      background: transparent; border: none; color: #cbd5e1; padding: 8px 14px;
+      font-size: 14px; cursor: pointer; border-radius: 6px; white-space: nowrap;
+    }
+    .nav button:hover { color: #fff; background: rgba(255,255,255,.08); }
+    .nav button.active { color: #fff; background: var(--navy); }
+    .topbar .meta { display: flex; gap: 6px; white-space: nowrap; align-items: center; }
+    #line-switch { border-color: rgba(255,255,255,.25); }
+    #line-switch button { background: transparent; color: #cbd5e1; padding: 6px 12px; }
+    #line-switch button:hover { color: #fff; background: rgba(255,255,255,.08); }
+    #line-switch button.active { background: var(--blue); color: #fff; }
+    #range-from, #range-to {
+      background: rgba(255,255,255,.08); color: #e2e8f0; border: 1px solid rgba(255,255,255,.22);
+      border-radius: 6px; padding: 5px 8px; font-size: 12px; cursor: pointer;
+    }
+    #range-from:hover, #range-to:hover { border-color: rgba(255,255,255,.45); }
+    #range-from:focus, #range-to:focus { outline: none; border-color: var(--blue); }
+    #range-from option, #range-to option { color: #1f2937; background: #fff; }
+
+    /* ===== 主体 ===== */
+    main { max-width: 1280px; margin: 0 auto; padding: 20px; }
+
+    /* ===== KPI 卡片 ===== */
+    .kpi-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; margin-bottom: 16px; }
+    .kpi {
+      background: var(--card); border: 1px solid var(--border); border-radius: 10px;
+      padding: 14px 16px;
+    }
+    .kpi .label { font-size: 12px; color: var(--muted); margin-bottom: 6px; }
+    .kpi .value { font-size: 22px; font-weight: 700; }
+    .kpi .sub { font-size: 12px; margin-top: 4px; color: var(--muted); }
+    .up { color: var(--risk); } .down { color: var(--good); } .flat { color: var(--muted); }
+    .text-warn { color: var(--orange); }
+
+    /* ===== 面板 ===== */
+    .panel { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 18px; margin-bottom: 16px; }
+    .panel h3 { font-size: 15px; margin-bottom: 14px; display: flex; align-items: center; justify-content: space-between; }
+    .panel h3 .hint { font-size: 12px; color: var(--muted); font-weight: 400; }
+
+    /* ===== 表格 ===== */
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th, td { text-align: left; padding: 9px 12px; border-bottom: 1px solid var(--border); }
+    th { color: var(--muted); font-weight: 500; font-size: 12px; white-space: nowrap; }
+    tbody tr:hover { background: #f8fafc; }
+    td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+    /* ===== 徽章 ===== */
+    .badge { display: inline-block; padding: 2px 8px; border-radius: 999px; font-size: 11px; font-weight: 600; }
+    .badge.ec { background: #e0f3fb; color: var(--blue); }
+    .badge.trad { background: #e0e7f0; color: var(--navy); }
+    .badge.muted { background: #eef2f6; color: var(--muted); }
+    .badge.watch { background: #fdf0e0; color: var(--orange); }
+    .badge.good { background: #dcfce7; color: #16a34a; }
+    .badge.risk { background: #fee2e2; color: #dc2626; }
+    .badge.info { background: #dbeafe; color: #2563eb; }
+
+    /* ===== 搜索/工具栏 ===== */
+    .toolbar { display: flex; gap: 10px; margin-bottom: 14px; flex-wrap: wrap; align-items: center; }
+    .toolbar input, .toolbar select {
+      padding: 7px 10px; border: 1px solid var(--border); border-radius: 6px; font-size: 13px;
+      background: #fff; color: var(--text);
+    }
+    .toolbar select:focus { outline: none; border-color: var(--blue); }
+    .btn {
+      padding: 7px 14px; border: 1px solid var(--border); border-radius: 6px; background: #fff;
+      font-size: 13px; cursor: pointer; color: var(--text); white-space: nowrap;
+    }
+    .btn:hover { border-color: var(--blue); color: var(--blue); }
+    .btn.primary { background: var(--navy); color: #fff; border-color: var(--navy); }
+    .btn.primary:hover { background: #003a70; color: #fff; }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .panel input[type="number"] { width: 72px; padding: 5px 8px; border: 1px solid var(--border); border-radius: 6px; text-align: right; }
+    .panel label.muted { font-size: 12px; }
+
+    /* ===== 趋势图 ===== */
+    .chart { width: 100%; height: 240px; }
+    .chart svg { width: 100%; height: 100%; }
+
+    .seg { display: inline-flex; border: 1px solid var(--border); border-radius: 6px; overflow: hidden; }
+    .seg button { border: none; background: #fff; padding: 6px 12px; font-size: 12px; cursor: pointer; }
+    .seg button.active { background: var(--navy); color: #fff; }
+
+    .muted { color: var(--muted); }
+    .empty { color: var(--muted); text-align: center; padding: 40px 0; }
+
+    /* ===== 可点击客户名 ===== */
+    .cust-name { color: var(--blue); cursor: pointer; text-decoration: none; }
+    .cust-name:hover { text-decoration: underline; }
+
+    /* ===== 弹窗（维护四角色） ===== */
+    .modal-overlay { position: fixed; inset: 0; background: rgba(15,23,42,.5); display: flex; align-items: center; justify-content: center; z-index: 200; }
+    .modal { background: var(--card); border-radius: 12px; width: 440px; max-width: 92vw; box-shadow: 0 20px 50px rgba(0,0,0,.25); overflow: hidden; }
+    .modal-head { display: flex; align-items: center; justify-content: space-between; padding: 14px 18px; border-bottom: 1px solid var(--border); font-weight: 600; }
+    .modal-close { border: none; background: transparent; font-size: 22px; cursor: pointer; color: var(--muted); line-height: 1; }
+    .modal-close:hover { color: var(--text); }
+    .modal-body { padding: 18px 18px 6px; }
+    .modal-body .field { margin-bottom: 12px; }
+    .modal-body label { display: block; font-size: 12px; color: var(--muted); margin-bottom: 4px; }
+    .modal-body input { width: 100%; padding: 7px 10px; border: 1px solid var(--border); border-radius: 6px; font-size: 13px; color: var(--text); }
+    .modal-body input:focus { outline: none; border-color: var(--blue); }
+    .modal-foot { display: flex; justify-content: flex-end; gap: 8px; padding: 12px 18px 16px; border-top: 1px solid var(--border); }
+    .modal-wide { width: 720px; }
+    .modal-xwide { width: 980px; max-width: calc(100vw - 48px); }
+
+    /* ===== 客户详情弹窗（趋势 + 健康分 + 四角色） ===== */
+    .detail-health { display: flex; align-items: center; gap: 18px; padding: 10px 14px; background: #f8fafc; border: 1px solid var(--border); border-radius: 8px; margin-bottom: 14px; }
+    .detail-health .dh-score { display: flex; align-items: baseline; gap: 8px; }
+    .detail-health .dh-num { font-size: 30px; font-weight: 700; line-height: 1; }
+    .detail-health .dh-level { font-size: 13px; color: var(--muted); }
+    .detail-health .dh-parts { display: flex; gap: 14px; font-size: 12px; color: var(--muted); }
+    .detail-health .dh-parts b { color: var(--text); font-weight: 600; }
+    .detail-trend { display: grid; grid-template-columns: 1fr 1fr; gap: 0 28px; margin-top: 16px; }
+    .detail-trend .trend-cell { min-width: 0; }
+    .detail-trend .trend-label { font-size: 12px; color: var(--muted); margin-bottom: 2px; }
+    .detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 28px; align-items: start; }
+    .detail-col { min-width: 0; }
+    .detail-col .detail-roles-title { margin-top: 0; }
+    .detail-roles-title { font-size: 12px; color: var(--muted); margin: 16px 0 8px; padding-top: 12px; border-top: 1px solid var(--border); }
+    .detail-roles { display: grid; grid-template-columns: 1fr 1fr; gap: 0 14px; }
+    .role-start { margin-top: 6px; }
+    .role-start label { display: block; font-size: 11px; color: var(--muted); margin-bottom: 2px; }
+    .role-start select { width: 100%; padding: 6px 8px; border: 1px solid var(--border); border-radius: 6px; font-size: 13px; background: #fff; color: var(--text); }
+
+    /* ===== 角色变更历史 ===== */
+    .rc-list { display: flex; flex-direction: column; gap: 6px; margin-bottom: 10px; }
+    .rc-row { display: flex; align-items: center; gap: 8px; font-size: 13px; }
+    .rc-row .rc-month { color: var(--muted); font-variant-numeric: tabular-nums; }
+    .rc-row .rc-move { flex: 1; }
+    .rc-row .rc-del { padding: 3px 10px; font-size: 12px; color: var(--risk); border-color: #fecaca; }
+    .rc-row .rc-del:hover { background: #fef2f2; border-color: var(--risk); color: var(--risk); }
+    .rc-add { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+    .rc-add select, .rc-add input {
+      padding: 6px 8px; border: 1px solid var(--border); border-radius: 6px; font-size: 13px;
+      background: #fff; color: var(--text);
+    }
+    .rc-add input { flex: 1; min-width: 90px; }
+
+    /* ===== 商机雷达（折叠区） ===== */
+    details.radar { margin-top: 4px; }
+    details.radar summary {
+      cursor: pointer; font-weight: 600; color: var(--navy);
+      padding: 8px 2px; font-size: 14px; user-select: none;
+    }
+    details.radar summary:hover { color: var(--blue); }
+
+    @media (max-width: 900px) {
+      .kpi-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
+</head>
+<body>
+  <script src="js/gate.js"></script>
+  <header class="topbar">
+    <div class="brand">ETTON<span class="accent">CRM</span> · 月度报表<span class="accent" style="color:#F07800">（公网版）</span></div>
+    <nav class="nav" id="nav">
+      <button data-view="dashboard" class="active">经营看板</button>
+      <button data-view="customers">客户排行</button>
+      <button data-view="suppliers" data-line="ec">供应商排行</button>
+      <button data-view="weeks" data-line="ec">周明细</button>
+      <button data-view="opportunities">商机</button>
+      <button data-view="alerts">预警</button>
+      <button data-view="workload">人效</button>
+      <button data-view="settings">设置</button>
+    </nav>
+    <div class="meta">
+      <span class="seg" id="line-switch">
+        <button data-line="ec" class="active">电商</button>
+        <button data-line="trad">传统</button>
+      </span>
+      <span class="badge ec" id="line-badge">跨境电商</span>
+      <select id="range-from" title="起始月" aria-label="起始月"></select>
+      <span class="muted">至</span>
+      <select id="range-to" title="结束月" aria-label="结束月"></select>
+    </div>
+  </header>
+  <main id="view"><div class="empty">加载中…</div></main>
+  <div id="modal-root"></div>
+
+  <script src="crm-monthly-seed-public.js"></script>
+  <script src="crm-monthly-seed-trad-public.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/state.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/roles.js"></script>
+  <script src="js/health.js"></script>
+  <script src="js/opportunities.js"></script>
+  <script src="js/indexes.js"></script>
+  <script src="js/render-dashboard.js"></script>
+  <script src="js/render-customers.js"></script>
+  <script src="js/render-suppliers.js"></script>
+  <script src="js/render-weeks.js"></script>
+  <script src="js/render-opportunities.js"></script>
+  <script src="js/render-alerts.js"></script>
+  <script src="js/render-workload.js"></script>
+  <script src="js/render-settings.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

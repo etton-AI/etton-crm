@@ -1,0 +1,76 @@
+# ETTON CRM 公网版 · Sealos 部署清单（静态站）
+# 用法：kubectl apply -f k8s/deploy-sealos.yaml
+# 域名前缀 xieyxu4j7q 为随机生成（避免与其他用户冲突），可按需改成其它 *.sealosbja.site 子域。
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: etton-crm
+  namespace: ns-22nz9gjz
+  labels:
+    app: etton-crm
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: etton-crm
+  template:
+    metadata:
+      labels:
+        app: etton-crm
+    spec:
+      containers:
+        - name: etton-crm
+          image: ghcr.io/etton-ai/etton-crm:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
+          resources:
+            requests:
+              cpu: 10m
+              memory: 32Mi
+            limits:
+              cpu: 200m
+              memory: 128Mi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: etton-crm
+  namespace: ns-22nz9gjz
+  labels:
+    app: etton-crm
+spec:
+  type: ClusterIP
+  selector:
+    app: etton-crm
+  ports:
+    - port: 80
+      targetPort: 80
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: etton-crm
+  namespace: ns-22nz9gjz
+  labels:
+    cloud.sealos.io/app-deploy-manager: etton-crm
+    cloud.sealos.io/app-deploy-manager-domain: xieyxu4j7q
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/backend-protocol: HTTP
+spec:
+  rules:
+    - host: xieyxu4j7q.sealosbja.site
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: etton-crm
+                port:
+                  number: 80
+  tls:
+    - hosts:
+        - xieyxu4j7q.sealosbja.site
+      secretName: wildcard-cert

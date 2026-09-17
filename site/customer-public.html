@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>客户详情 · ETTON CRM（公网版）</title>
+  <style>
+    :root {
+      --blue: #0090D8;
+      --navy: #004890;
+      --orange: #F07800;
+      --good: #16a34a;
+      --watch: #F07800;
+      --risk: #dc2626;
+      --bg: #f4f6f9;
+      --card: #ffffff;
+      --border: #e5e9f0;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --topbar: #10212f;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+      background: var(--bg); color: var(--text); font-size: 14px; line-height: 1.5;
+    }
+
+    /* ===== 顶栏 ===== */
+    .topbar {
+      background: var(--topbar); color: #fff; display: flex; align-items: center;
+      gap: 16px; padding: 0 20px; height: 56px; position: sticky; top: 0; z-index: 100;
+    }
+    .back-btn {
+      background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.22); color: #e2e8f0;
+      border-radius: 6px; padding: 6px 12px; font-size: 13px; cursor: pointer; white-space: nowrap;
+    }
+    .back-btn:hover { border-color: rgba(255,255,255,.45); color: #fff; }
+    .cust-title { font-size: 17px; font-weight: 700; letter-spacing: .5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .topbar .badge { margin-left: auto; }
+
+    main { max-width: 1080px; margin: 0 auto; padding: 20px; }
+
+    /* ===== 核心信息栏（一行横排） ===== */
+    .info-bar {
+      display: flex; background: var(--card); border: 1px solid var(--border);
+      border-radius: 10px; margin-bottom: 16px; overflow: hidden;
+    }
+    .info-item { flex: 1; min-width: 0; padding: 16px 20px; border-right: 1px solid var(--border); }
+    .info-item:last-child { border-right: none; }
+    .info-label { font-size: 12px; color: var(--muted); margin-bottom: 6px; }
+    .info-value { font-size: 16px; font-weight: 600; display: flex; align-items: center; gap: 8px; }
+    .info-num { font-size: 26px; font-weight: 700; line-height: 1; }
+    .info-sub { font-size: 12px; color: var(--muted); margin-top: 6px; }
+
+    /* ===== Tab ===== */
+    .tabs { display: flex; gap: 4px; margin-bottom: 16px; border-bottom: 1px solid var(--border); }
+    .tab-btn {
+      background: transparent; border: none; padding: 10px 18px; font-size: 14px; cursor: pointer;
+      color: var(--muted); border-bottom: 2px solid transparent; margin-bottom: -1px; white-space: nowrap;
+    }
+    .tab-btn:hover { color: var(--text); }
+    .tab-btn.active { color: var(--navy); border-bottom-color: var(--navy); font-weight: 600; }
+
+    /* ===== 面板 / 表格 / 徽章 / 工具 ===== */
+    .panel { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 18px; margin-bottom: 16px; }
+    .panel h3 { font-size: 15px; margin-bottom: 14px; display: flex; align-items: center; justify-content: space-between; }
+    .panel h3 .hint { font-size: 12px; color: var(--muted); font-weight: 400; }
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+    th, td { text-align: left; padding: 9px 12px; border-bottom: 1px solid var(--border); }
+    th { color: var(--muted); font-weight: 500; font-size: 12px; white-space: nowrap; }
+    tbody tr:hover { background: #f8fafc; }
+    td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+    .badge { display: inline-block; padding: 2px 8px; border-radius: 999px; font-size: 11px; font-weight: 600; }
+    .badge.ec { background: #e0f3fb; color: var(--blue); }
+    .badge.trad { background: #e0e7f0; color: var(--navy); }
+    .badge.muted { background: #eef2f6; color: var(--muted); }
+    .badge.watch { background: #fdf0e0; color: var(--orange); }
+    .badge.good { background: #dcfce7; color: #16a34a; }
+    .badge.risk { background: #fee2e2; color: #dc2626; }
+    .badge.info { background: #dbeafe; color: #2563eb; }
+
+    .toolbar { display: flex; gap: 10px; margin-bottom: 14px; flex-wrap: wrap; align-items: center; }
+    .btn {
+      padding: 7px 14px; border: 1px solid var(--border); border-radius: 6px; background: #fff;
+      font-size: 13px; cursor: pointer; color: var(--text); white-space: nowrap;
+    }
+    .btn:hover { border-color: var(--blue); color: var(--blue); }
+    .btn.primary { background: var(--navy); color: #fff; border-color: var(--navy); }
+    .btn.primary:hover { background: #003a70; color: #fff; }
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .field { margin-bottom: 12px; }
+    .field label { display: block; font-size: 12px; color: var(--muted); margin-bottom: 4px; }
+    .field input, .field select, .field textarea {
+      width: 100%; padding: 7px 10px; border: 1px solid var(--border); border-radius: 6px;
+      font-size: 13px; color: var(--text); background: #fff;
+    }
+    .field textarea { resize: vertical; font-family: inherit; }
+    .field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--blue); }
+
+    .chart { width: 100%; height: 240px; }
+    .chart svg { width: 100%; height: 100%; }
+    .muted { color: var(--muted); }
+    .empty { color: var(--muted); text-align: center; padding: 40px 0; }
+
+    .detail-trend { display: grid; grid-template-columns: 1fr 1fr; gap: 0 28px; margin-top: 16px; }
+    .trend-cell { min-width: 0; }
+    .trend-label { font-size: 12px; color: var(--muted); margin-bottom: 2px; }
+
+    /* ===== 弹窗（维护四角色） ===== */
+    .modal-overlay { position: fixed; inset: 0; background: rgba(15,23,42,.5); display: flex; align-items: center; justify-content: center; z-index: 200; }
+    .modal { background: var(--card); border-radius: 12px; width: 440px; max-width: 92vw; box-shadow: 0 20px 50px rgba(0,0,0,.25); overflow: hidden; }
+    .modal-head { display: flex; align-items: center; justify-content: space-between; padding: 14px 18px; border-bottom: 1px solid var(--border); font-weight: 600; }
+    .modal-close { border: none; background: transparent; font-size: 22px; cursor: pointer; color: var(--muted); line-height: 1; }
+    .modal-close:hover { color: var(--text); }
+    .modal-body { padding: 18px 18px 6px; }
+    .modal-body .field { margin-bottom: 12px; }
+    .modal-body label { display: block; font-size: 12px; color: var(--muted); margin-bottom: 4px; }
+    .modal-body input { width: 100%; padding: 7px 10px; border: 1px solid var(--border); border-radius: 6px; font-size: 13px; color: var(--text); }
+    .modal-body input:focus { outline: none; border-color: var(--blue); }
+    .modal-foot { display: flex; justify-content: flex-end; gap: 8px; padding: 12px 18px 16px; border-top: 1px solid var(--border); }
+    .modal-wide { width: 720px; }
+    .modal-xwide { width: 980px; max-width: calc(100vw - 48px); }
+
+    /* 四角色弹窗内部：健康分 + 双列栅格 + 角色变更历史 */
+    .detail-health { display: flex; align-items: center; gap: 18px; padding: 10px 14px; background: #f8fafc; border: 1px solid var(--border); border-radius: 8px; margin-bottom: 14px; }
+    .detail-health .dh-score { display: flex; align-items: baseline; gap: 8px; }
+    .detail-health .dh-num { font-size: 30px; font-weight: 700; line-height: 1; }
+    .detail-health .dh-level { font-size: 13px; color: var(--muted); }
+    .detail-health .dh-parts { display: flex; gap: 14px; font-size: 12px; color: var(--muted); }
+    .detail-health .dh-parts b { color: var(--text); font-weight: 600; }
+    .detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 28px; align-items: start; }
+    .detail-col { min-width: 0; }
+    .detail-col .detail-roles-title { margin-top: 0; }
+    .detail-roles-title { font-size: 12px; color: var(--muted); margin: 16px 0 8px; padding-top: 12px; border-top: 1px solid var(--border); }
+    .detail-roles { display: grid; grid-template-columns: 1fr 1fr; gap: 0 14px; }
+    .role-start { margin-top: 6px; }
+    .role-start label { display: block; font-size: 11px; color: var(--muted); margin-bottom: 2px; }
+    .role-start select { width: 100%; padding: 6px 8px; border: 1px solid var(--border); border-radius: 6px; font-size: 13px; background: #fff; color: var(--text); }
+
+    .rc-list { display: flex; flex-direction: column; gap: 6px; margin-bottom: 10px; }
+    .rc-row { display: flex; align-items: center; gap: 8px; font-size: 13px; }
+    .rc-row .rc-month { color: var(--muted); font-variant-numeric: tabular-nums; }
+    .rc-row .rc-move { flex: 1; }
+    .rc-row .rc-del { padding: 3px 10px; font-size: 12px; color: var(--risk); border-color: #fecaca; }
+    .rc-row .rc-del:hover { background: #fef2f2; border-color: var(--risk); color: var(--risk); }
+    .rc-add { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+    .rc-add select, .rc-add input { padding: 6px 8px; border: 1px solid var(--border); border-radius: 6px; font-size: 13px; background: #fff; color: var(--text); }
+    .rc-add input { flex: 1; min-width: 90px; }
+
+    @media (max-width: 800px) {
+      .info-bar { flex-wrap: wrap; }
+      .info-item { flex: 1 1 50%; border-right: none; border-bottom: 1px solid var(--border); }
+      .detail-trend { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <script src="js/gate.js"></script>
+  <header class="topbar">
+    <button class="back-btn" id="back-btn">← 返回</button>
+    <h1 class="cust-title" id="cust-title">客户详情（公网版）</h1>
+    <span class="badge ec" id="line-badge">跨境电商</span>
+  </header>
+  <main>
+    <div class="info-bar" id="info-bar"></div>
+    <nav class="tabs">
+      <button class="tab-btn active" id="tab-trend-btn">趋势</button>
+      <button class="tab-btn" id="tab-activities-btn">跟进记录</button>
+      <button class="tab-btn" id="tab-opp-btn">商机</button>
+    </nav>
+    <div id="tab-trend"></div>
+    <div id="tab-activities"></div>
+    <div id="tab-opp"></div>
+  </main>
+  <div id="modal-root"></div>
+
+  <script>
+    // 在加载业务脚本前，先按 URL 参数设置业务线，让 config.js 读到正确的 LINE
+    (function () {
+      try {
+        var l = new URLSearchParams(window.location.search).get('line');
+        if (l === 'trad' || l === 'ec') localStorage.setItem('crm-monthly-line', l);
+      } catch (e) {}
+    })();
+  </script>
+  <script src="crm-monthly-seed-public.js"></script>
+  <script src="crm-monthly-seed-trad-public.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/roles.js"></script>
+  <script src="js/health.js"></script>
+  <script src="js/opportunities.js"></script>
+  <script src="js/indexes.js"></script>
+  <script src="js/customer.js"></script>
+</body>
+</html>
