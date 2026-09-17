@@ -36,10 +36,19 @@ git push -u github main
 push 到 `main` 后，`.github/workflows/docker-build.yml` 会自动构建镜像并推到
 `ghcr.io/etton-ai/etton-crm:latest`。（仓库若不在 `etton-AI` 组织，请同步改 workflow 里的镜像路径和下面 k8s 里的 image。）
 
-### 2. 把 GHCR 镜像包设为公开（关键，否则 Sealos 拉不到）
+### 2. 创建镜像拉取凭据（Sealos 拉私有 GHCR 镜像用）
 
-- GitHub → 你的头像 → **Packages** → 找到 `etton-crm` → **Package settings → Danger Zone → Change visibility → Public**。
-- 默认新建的包是私有，Sealos 集群没有拉取凭证，会 `ImagePullBackOff`。
+镜像包 `ghcr.io/etton-ai/etton-crm:latest` 默认**私有**，Sealos 集群拉取需要凭据（`k8s/deploy-sealos.yaml` 已引用 `imagePullSecrets: ghcr-pull`）：
+
+```bash
+kubectl create secret docker-registry ghcr-pull \
+  --docker-server=ghcr.io \
+  --docker-username=etton-AI \
+  --docker-password=<你的 GitHub PAT，需 repo 或 read:packages 权限> \
+  -n ns-22nz9gjz
+```
+
+> 备选：也可把 GHCR 包设为公开（GitHub → Packages → `etton-crm` → Package settings → Change visibility → Public），然后从 `k8s/deploy-sealos.yaml` 里删掉 `imagePullSecrets` 段，就无需 secret。
 
 ### 3. 部署到 Sealos
 

@@ -18,6 +18,8 @@ spec:
       labels:
         app: etton-crm
     spec:
+      imagePullSecrets:
+        - name: ghcr-pull
       containers:
         - name: etton-crm
           image: ghcr.io/etton-ai/etton-crm:latest
