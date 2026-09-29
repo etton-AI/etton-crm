@@ -1,5 +1,5 @@
 window.CRM_MONTHLY_SEED_TRAD = {
-"generatedAt": "2026-09-15",
+"generatedAt": "2026-09-29",
 "version": 1,
 "line": "trad",
 "months": [
@@ -165,8 +165,8 @@ window.CRM_MONTHLY_SEED_TRAD = {
 },
 {
 "month": "2026-09",
-"tickets": 115,
-"profit": 203000
+"tickets": 187,
+"profit": 366000
 }
 ],
 "weeks": [],
@@ -7532,7 +7532,7 @@ window.CRM_MONTHLY_SEED_TRAD = {
 "name": "CHT",
 "month": "2026-06",
 "tickets": 52,
-"profit": 268000,
+"profit": 267000,
 "main": "PAUL"
 },
 {
@@ -7756,7 +7756,7 @@ window.CRM_MONTHLY_SEED_TRAD = {
 "name": "BEACON",
 "month": "2026-07",
 "tickets": 7,
-"profit": 11000,
+"profit": 10000,
 "main": "ELAINE"
 },
 {
@@ -7812,7 +7812,7 @@ window.CRM_MONTHLY_SEED_TRAD = {
 "name": "CHT",
 "month": "2026-07",
 "tickets": 30,
-"profit": 140000,
+"profit": 139000,
 "main": "PAUL"
 },
 {
@@ -7952,7 +7952,7 @@ window.CRM_MONTHLY_SEED_TRAD = {
 "name": "TY",
 "month": "2026-07",
 "tickets": 2,
-"profit": 5000,
+"profit": 6000,
 "main": "PAUL"
 },
 {
@@ -8211,7 +8211,7 @@ window.CRM_MONTHLY_SEED_TRAD = {
 "name": "YL3",
 "month": "2026-08",
 "tickets": 4,
-"profit": 6000,
+"profit": 5000,
 "main": "COCO"
 },
 {
@@ -8266,7 +8266,7 @@ window.CRM_MONTHLY_SEED_TRAD = {
 {
 "name": "BEACON",
 "month": "2026-09",
-"tickets": 4,
+"tickets": 9,
 "profit": 0,
 "main": "ELAINE"
 },
@@ -8280,7 +8280,7 @@ window.CRM_MONTHLY_SEED_TRAD = {
 {
 "name": "JTL",
 "month": "2026-09",
-"tickets": 1,
+"tickets": 2,
 "profit": 0,
 "main": "ELAINE"
 },
@@ -8292,7 +8292,28 @@ window.CRM_MONTHLY_SEED_TRAD = {
 "main": "COCO"
 },
 {
+"name": "PREMIERE",
+"month": "2026-09",
+"tickets": 1,
+"profit": 0,
+"main": "PAUL"
+},
+{
 "name": "QS",
+"month": "2026-09",
+"tickets": 1,
+"profit": 0,
+"main": "ELAINE"
+},
+{
+"name": "YY",
+"month": "2026-09",
+"tickets": 1,
+"profit": 0,
+"main": "ELAINE"
+},
+{
+"name": "YC",
 "month": "2026-09",
 "tickets": 1,
 "profit": 0,
@@ -8301,15 +8322,15 @@ window.CRM_MONTHLY_SEED_TRAD = {
 {
 "name": "CHT",
 "month": "2026-09",
-"tickets": 36,
-"profit": 104000,
+"tickets": 44,
+"profit": 138000,
 "main": "PAUL"
 },
 {
 "name": "LD",
 "month": "2026-09",
-"tickets": 2,
-"profit": 0,
+"tickets": 3,
+"profit": 11000,
 "main": "ELAINE"
 },
 {
@@ -8322,12 +8343,19 @@ window.CRM_MONTHLY_SEED_TRAD = {
 {
 "name": "HHC",
 "month": "2026-09",
-"tickets": 1,
+"tickets": 3,
 "profit": 0,
 "main": "PAUL"
 },
 {
 "name": "QD",
+"month": "2026-09",
+"tickets": 4,
+"profit": 0,
+"main": "COCO"
+},
+{
+"name": "GTYD",
 "month": "2026-09",
 "tickets": 2,
 "profit": 0,
@@ -8343,9 +8371,16 @@ window.CRM_MONTHLY_SEED_TRAD = {
 {
 "name": "WYCJ",
 "month": "2026-09",
-"tickets": 13,
-"profit": 10000,
+"tickets": 24,
+"profit": 46000,
 "main": "COCO"
+},
+{
+"name": "AQ",
+"month": "2026-09",
+"tickets": 1,
+"profit": 0,
+"main": "ELAINE"
 },
 {
 "name": "HYXC",
@@ -8357,29 +8392,43 @@ window.CRM_MONTHLY_SEED_TRAD = {
 {
 "name": "ZY",
 "month": "2026-09",
-"tickets": 1,
+"tickets": 2,
 "profit": 0,
 "main": "ELAINE"
 },
 {
 "name": "DMX",
 "month": "2026-09",
-"tickets": 1,
+"tickets": 4,
 "profit": 0,
 "main": "COCO"
+},
+{
+"name": "HM",
+"month": "2026-09",
+"tickets": 1,
+"profit": 0,
+"main": "ELAINE"
 },
 {
 "name": "ZR",
 "month": "2026-09",
-"tickets": 12,
-"profit": 20000,
+"tickets": 22,
+"profit": 55000,
 "main": "COCO"
+},
+{
+"name": "YYYF",
+"month": "2026-09",
+"tickets": 1,
+"profit": 0,
+"main": "ELAINE"
 },
 {
 "name": "STLH",
 "month": "2026-09",
-"tickets": 4,
-"profit": 0,
+"tickets": 8,
+"profit": 13000,
 "main": "PAUL"
 },
 {
@@ -8392,19 +8441,33 @@ window.CRM_MONTHLY_SEED_TRAD = {
 {
 "name": "TJ",
 "month": "2026-09",
-"tickets": 1,
-"profit": 0,
+"tickets": 2,
+"profit": 5000,
 "main": "ELAINE"
 },
 {
 "name": "ATL",
 "month": "2026-09",
 "tickets": 2,
-"profit": 9000,
+"profit": 5000,
 "main": "PAUL"
 },
 {
 "name": "SD",
+"month": "2026-09",
+"tickets": 2,
+"profit": 0,
+"main": "ELAINE"
+},
+{
+"name": "HYMT",
+"month": "2026-09",
+"tickets": 1,
+"profit": 0,
+"main": "PAUL"
+},
+{
+"name": "HG",
 "month": "2026-09",
 "tickets": 1,
 "profit": 0,
@@ -8413,7 +8476,14 @@ window.CRM_MONTHLY_SEED_TRAD = {
 {
 "name": "WHD",
 "month": "2026-09",
-"tickets": 8,
+"tickets": 15,
+"profit": 10000,
+"main": "PAUL"
+},
+{
+"name": "RS",
+"month": "2026-09",
+"tickets": 2,
 "profit": 0,
 "main": "PAUL"
 },
@@ -8423,6 +8493,13 @@ window.CRM_MONTHLY_SEED_TRAD = {
 "tickets": 1,
 "profit": 0,
 "main": "ELAINE"
+},
+{
+"name": "TY",
+"month": "2026-09",
+"tickets": 2,
+"profit": 5000,
+"main": "PAUL"
 },
 {
 "name": "JX2",
@@ -8441,8 +8518,8 @@ window.CRM_MONTHLY_SEED_TRAD = {
 {
 "name": "GY3",
 "month": "2026-09",
-"tickets": 2,
-"profit": 0,
+"tickets": 3,
+"profit": 6000,
 "main": "ELAINE"
 }
 ],
@@ -9091,12 +9168,6 @@ window.CRM_MONTHLY_SEED_TRAD = {
 "sales2": "",
 "assistant": ""
 },
-"YL": {
-"importer": "",
-"main": "COCO",
-"sales2": "",
-"assistant": ""
-},
 "ZSSC": {
 "importer": "",
 "main": "COCO",
@@ -9110,6 +9181,12 @@ window.CRM_MONTHLY_SEED_TRAD = {
 "assistant": ""
 },
 "HYH": {
+"importer": "",
+"main": "COCO",
+"sales2": "",
+"assistant": ""
+},
+"YL": {
 "importer": "",
 "main": "COCO",
 "sales2": "",
@@ -9130,12 +9207,6 @@ window.CRM_MONTHLY_SEED_TRAD = {
 "YCSM": {
 "importer": "",
 "main": "ELAINE",
-"sales2": "",
-"assistant": ""
-},
-"D1M": {
-"importer": "",
-"main": "PAUL",
 "sales2": "",
 "assistant": ""
 },
@@ -9163,9 +9234,9 @@ window.CRM_MONTHLY_SEED_TRAD = {
 "sales2": "",
 "assistant": ""
 },
-"ETTON": {
+"D1M": {
 "importer": "",
-"main": "COCO",
+"main": "PAUL",
 "sales2": "",
 "assistant": ""
 },
@@ -9200,6 +9271,12 @@ window.CRM_MONTHLY_SEED_TRAD = {
 "assistant": ""
 },
 "LWT": {
+"importer": "",
+"main": "COCO",
+"sales2": "",
+"assistant": ""
+},
+"ETTON": {
 "importer": "",
 "main": "COCO",
 "sales2": "",
@@ -9475,6 +9552,12 @@ window.CRM_MONTHLY_SEED_TRAD = {
 "sales2": "",
 "assistant": ""
 },
+"HYMT": {
+"importer": "",
+"main": "PAUL",
+"sales2": "",
+"assistant": ""
+},
 "AKT": {
 "importer": "",
 "main": "COCO",
@@ -9493,6 +9576,12 @@ window.CRM_MONTHLY_SEED_TRAD = {
 "sales2": "",
 "assistant": ""
 },
+"GTYD": {
+"importer": "",
+"main": "COCO",
+"sales2": "",
+"assistant": ""
+},
 "QS": {
 "importer": "",
 "main": "ELAINE",
@@ -9500,6 +9589,12 @@ window.CRM_MONTHLY_SEED_TRAD = {
 "assistant": ""
 },
 "YL2": {
+"importer": "",
+"main": "ELAINE",
+"sales2": "",
+"assistant": ""
+},
+"HM": {
 "importer": "",
 "main": "ELAINE",
 "sales2": "",
@@ -9589,12 +9684,6 @@ window.CRM_MONTHLY_SEED_TRAD = {
 "sales2": "",
 "assistant": ""
 },
-"HX2": {
-"importer": "",
-"main": "COCO",
-"sales2": "",
-"assistant": ""
-},
 "ZXR": {
 "importer": "",
 "main": "COCO",
@@ -9602,6 +9691,12 @@ window.CRM_MONTHLY_SEED_TRAD = {
 "assistant": ""
 },
 "HQD": {
+"importer": "",
+"main": "COCO",
+"sales2": "",
+"assistant": ""
+},
+"HX2": {
 "importer": "",
 "main": "COCO",
 "sales2": "",
