@@ -1,5 +1,5 @@
 window.CRM_MONTHLY_SEED = {
-"generatedAt": "2026-09-29",
+"generatedAt": "2026-11-02",
 "version": 5,
 "line": "ec",
 "months": [
@@ -144,11 +144,18 @@ window.CRM_MONTHLY_SEED = {
 "month": "2026-08"
 },
 {
-"tickets": 661,
-"boxes": 28372,
-"cbm": 2100.82,
-"profit": 439000,
+"tickets": 747,
+"boxes": 31470,
+"cbm": 2317.03,
+"profit": 680000,
 "month": "2026-09"
+},
+{
+"tickets": 617,
+"boxes": 20121,
+"cbm": 1589.7,
+"profit": 432000,
+"month": "2026-10"
 }
 ],
 "weeks": [
@@ -1039,7 +1046,7 @@ window.CRM_MONTHLY_SEED = {
 "tickets": 156,
 "boxes": 5599,
 "cbm": 392.33,
-"profit": 125000,
+"profit": 126000,
 "replenish": "√",
 "month": "2026-09"
 },
@@ -1047,27 +1054,27 @@ window.CRM_MONTHLY_SEED = {
 "range": "9.14-9.20",
 "tickets": 177,
 "boxes": 8054,
-"cbm": 545.19,
-"profit": 167000,
+"cbm": 545.04,
+"profit": 173000,
 "replenish": "√",
 "month": "2026-09"
 },
 {
 "range": "9.21-9.27",
-"tickets": 179,
-"boxes": 8380,
-"cbm": 679.29,
-"profit": null,
+"tickets": 176,
+"boxes": 8354,
+"cbm": 677.56,
+"profit": 167000,
 "replenish": "×",
 "month": "2026-09"
 },
 {
 "range": "9.28-9.30",
-"tickets": null,
-"boxes": null,
-"cbm": null,
-"profit": null,
-"replenish": "",
+"tickets": 89,
+"boxes": 3124,
+"cbm": 218.09,
+"profit": 66000,
+"replenish": "√",
 "month": "2026-09"
 },
 {
@@ -1078,6 +1085,51 @@ window.CRM_MONTHLY_SEED = {
 "profit": 146000,
 "replenish": "√",
 "month": "2026-09"
+},
+{
+"range": "10.1-10.4",
+"tickets": 57,
+"boxes": 2705,
+"cbm": 233.37,
+"profit": 95000,
+"replenish": "√",
+"month": "2026-10"
+},
+{
+"range": "10.12-10.18",
+"tickets": 199,
+"boxes": 5166,
+"cbm": 413.8,
+"profit": 148000,
+"replenish": "×",
+"month": "2026-10"
+},
+{
+"range": "10.19-10.25",
+"tickets": 129,
+"boxes": 3867,
+"cbm": 278.22,
+"profit": 70000,
+"replenish": "×",
+"month": "2026-10"
+},
+{
+"range": "10.26-10.31",
+"tickets": 110,
+"boxes": 2931,
+"cbm": 256.32,
+"profit": null,
+"replenish": "√",
+"month": "2026-10"
+},
+{
+"range": "10.5-10.11",
+"tickets": 122,
+"boxes": 5452,
+"cbm": 408.0,
+"profit": 118000,
+"replenish": "√",
+"month": "2026-10"
 }
 ],
 "customers": [
@@ -4436,39 +4488,45 @@ window.CRM_MONTHLY_SEED = {
 "month": "2026-08"
 },
 {
-"name": "LS",
-"cbm": 672.26,
-"profit": 166000,
-"month": "2026-09"
-},
-{
 "name": "TRKJ",
-"cbm": 538.88,
-"profit": 187000,
+"cbm": 1026.98,
+"profit": 325000,
 "month": "2026-09"
 },
 {
-"name": "DXYF",
-"cbm": 51.32,
-"profit": 9000,
+"name": "LS",
+"cbm": 951.76,
+"profit": 205000,
 "month": "2026-09"
 },
 {
 "name": "YXMY",
-"cbm": 47.48,
-"profit": 12000,
+"cbm": 98.97,
+"profit": 26000,
+"month": "2026-09"
+},
+{
+"name": "DXYF",
+"cbm": 78.52,
+"profit": 14000,
 "month": "2026-09"
 },
 {
 "name": "XS",
-"cbm": 32.66,
-"profit": 19000,
+"cbm": 37.14,
+"profit": 24000,
 "month": "2026-09"
 },
 {
 "name": "CHT",
-"cbm": 30.24,
-"profit": 21000,
+"cbm": 30.27,
+"profit": 29000,
+"month": "2026-09"
+},
+{
+"name": "ZNBTYS",
+"cbm": 19.32,
+"profit": 8000,
 "month": "2026-09"
 },
 {
@@ -4478,14 +4536,26 @@ window.CRM_MONTHLY_SEED = {
 "month": "2026-09"
 },
 {
+"name": "YT",
+"cbm": 13.31,
+"profit": 0,
+"month": "2026-09"
+},
+{
 "name": "HSYF",
 "cbm": 12.66,
 "profit": 0,
 "month": "2026-09"
 },
 {
-"name": "YT",
-"cbm": 5.48,
+"name": "ZMGS",
+"cbm": 11.5,
+"profit": 0,
+"month": "2026-09"
+},
+{
+"name": "ZHKEJ",
+"cbm": 5.18,
 "profit": 0,
 "month": "2026-09"
 },
@@ -4496,8 +4566,8 @@ window.CRM_MONTHLY_SEED = {
 "month": "2026-09"
 },
 {
-"name": "ZHKEJ",
-"cbm": 3.76,
+"name": "SZY",
+"cbm": 4.2,
 "profit": 0,
 "month": "2026-09"
 },
@@ -4508,8 +4578,8 @@ window.CRM_MONTHLY_SEED = {
 "month": "2026-09"
 },
 {
-"name": "ZNBTYS",
-"cbm": 2.22,
+"name": "KWCJ",
+"cbm": 1.74,
 "profit": 0,
 "month": "2026-09"
 },
@@ -4526,8 +4596,20 @@ window.CRM_MONTHLY_SEED = {
 "month": "2026-09"
 },
 {
+"name": "ZHT",
+"cbm": 0.68,
+"profit": 0,
+"month": "2026-09"
+},
+{
 "name": "GWKJ",
 "cbm": 0.47,
+"profit": 0,
+"month": "2026-09"
+},
+{
+"name": "WINWINZH",
+"cbm": 0.23,
 "profit": 0,
 "month": "2026-09"
 },
@@ -4544,15 +4626,9 @@ window.CRM_MONTHLY_SEED = {
 "month": "2026-09"
 },
 {
-"name": "WINWINZH",
+"name": "ZSQR",
 "cbm": 0.0,
-"profit": 0,
-"month": "2026-09"
-},
-{
-"name": "ZMGS",
-"cbm": 0.0,
-"profit": 0,
+"profit": 19000,
 "month": "2026-09"
 },
 {
@@ -4560,6 +4636,138 @@ window.CRM_MONTHLY_SEED = {
 "cbm": 0.0,
 "profit": 0,
 "month": "2026-09"
+},
+{
+"name": "TRKJ",
+"cbm": 578.24,
+"profit": 221000,
+"month": "2026-10"
+},
+{
+"name": "LS",
+"cbm": 479.85,
+"profit": 94000,
+"month": "2026-10"
+},
+{
+"name": "YXMY",
+"cbm": 88.63,
+"profit": 28000,
+"month": "2026-10"
+},
+{
+"name": "CYD",
+"cbm": 37.04,
+"profit": 10000,
+"month": "2026-10"
+},
+{
+"name": "GDSR",
+"cbm": 30.08,
+"profit": 15000,
+"month": "2026-10"
+},
+{
+"name": "SZY",
+"cbm": 29.12,
+"profit": 6000,
+"month": "2026-10"
+},
+{
+"name": "DXYF",
+"cbm": 22.55,
+"profit": 0,
+"month": "2026-10"
+},
+{
+"name": "CYWY",
+"cbm": 17.98,
+"profit": 0,
+"month": "2026-10"
+},
+{
+"name": "HGTY",
+"cbm": 13.35,
+"profit": 12000,
+"month": "2026-10"
+},
+{
+"name": "ZNBTYS",
+"cbm": 10.51,
+"profit": 0,
+"month": "2026-10"
+},
+{
+"name": "ZMGS",
+"cbm": 5.59,
+"profit": 0,
+"month": "2026-10"
+},
+{
+"name": "XS",
+"cbm": 5.5,
+"profit": 0,
+"month": "2026-10"
+},
+{
+"name": "CHT",
+"cbm": 5.31,
+"profit": 14000,
+"month": "2026-10"
+},
+{
+"name": "BELBEYO",
+"cbm": 3.6,
+"profit": 0,
+"month": "2026-10"
+},
+{
+"name": "GWKJ",
+"cbm": 1.83,
+"profit": 0,
+"month": "2026-10"
+},
+{
+"name": "KWCJ",
+"cbm": 1.8,
+"profit": 0,
+"month": "2026-10"
+},
+{
+"name": "ZHKEJ",
+"cbm": 0.94,
+"profit": 0,
+"month": "2026-10"
+},
+{
+"name": "WH",
+"cbm": 0.76,
+"profit": 0,
+"month": "2026-10"
+},
+{
+"name": "ZHT",
+"cbm": 0.69,
+"profit": 0,
+"month": "2026-10"
+},
+{
+"name": "YT",
+"cbm": 0.01,
+"profit": 0,
+"month": "2026-10"
+},
+{
+"name": "XLBB",
+"cbm": 0.0,
+"profit": 0,
+"month": "2026-10"
+},
+{
+"name": "WINWINZH",
+"cbm": 0.0,
+"profit": 0,
+"month": "2026-10"
 }
 ],
 "suppliers": [
@@ -5789,8 +5997,8 @@ window.CRM_MONTHLY_SEED = {
 },
 {
 "name": "SUP-029",
-"cbm": 665.92,
-"tickets": 227,
+"cbm": 862.38,
+"tickets": 279,
 "month": "2026-09"
 },
 {
@@ -5801,20 +6009,20 @@ window.CRM_MONTHLY_SEED = {
 },
 {
 "name": "SUP-025",
-"cbm": 274.52,
-"tickets": 102,
+"cbm": 284.8,
+"tickets": 120,
 "month": "2026-09"
 },
 {
 "name": "SUP-015",
-"cbm": 176.73,
-"tickets": 45,
+"cbm": 177.2,
+"tickets": 47,
 "month": "2026-09"
 },
 {
 "name": "SUP-017",
-"cbm": 74.26,
-"tickets": 138,
+"cbm": 86.51,
+"tickets": 157,
 "month": "2026-09"
 },
 {
@@ -5831,26 +6039,26 @@ window.CRM_MONTHLY_SEED = {
 },
 {
 "name": "SUP-018",
-"cbm": 14.03,
-"tickets": 18,
+"cbm": 14.13,
+"tickets": 19,
 "month": "2026-09"
 },
 {
 "name": "SUP-027",
-"cbm": 8.84,
-"tickets": 14,
+"cbm": 9.65,
+"tickets": 15,
+"month": "2026-09"
+},
+{
+"name": "SUP-019",
+"cbm": 9.05,
+"tickets": 5,
 "month": "2026-09"
 },
 {
 "name": "SUP-013",
 "cbm": 3.62,
 "tickets": 1,
-"month": "2026-09"
-},
-{
-"name": "SUP-019",
-"cbm": 1.22,
-"tickets": 4,
 "month": "2026-09"
 },
 {
@@ -5868,7 +6076,7 @@ window.CRM_MONTHLY_SEED = {
 {
 "name": "SUP-023",
 "cbm": 0.0,
-"tickets": 0,
+"tickets": 1,
 "month": "2026-09"
 },
 {
@@ -5942,6 +6150,162 @@ window.CRM_MONTHLY_SEED = {
 "cbm": 0.0,
 "tickets": 0,
 "month": "2026-09"
+},
+{
+"name": "SUP-029",
+"cbm": 738.49,
+"tickets": 240,
+"month": "2026-10"
+},
+{
+"name": "SUP-025",
+"cbm": 286.87,
+"tickets": 127,
+"month": "2026-10"
+},
+{
+"name": "SUP-022",
+"cbm": 131.36,
+"tickets": 70,
+"month": "2026-10"
+},
+{
+"name": "SUP-017",
+"cbm": 119.96,
+"tickets": 132,
+"month": "2026-10"
+},
+{
+"name": "SUP-021",
+"cbm": 49.8,
+"tickets": 11,
+"month": "2026-10"
+},
+{
+"name": "SUP-009",
+"cbm": 48.14,
+"tickets": 11,
+"month": "2026-10"
+},
+{
+"name": "SUP-027",
+"cbm": 10.04,
+"tickets": 14,
+"month": "2026-10"
+},
+{
+"name": "SUP-015",
+"cbm": 9.7,
+"tickets": 10,
+"month": "2026-10"
+},
+{
+"name": "SUP-018",
+"cbm": 6.25,
+"tickets": 7,
+"month": "2026-10"
+},
+{
+"name": "SUP-019",
+"cbm": 5.06,
+"tickets": 3,
+"month": "2026-10"
+},
+{
+"name": "SUP-016",
+"cbm": 3.58,
+"tickets": 4,
+"month": "2026-10"
+},
+{
+"name": "SUP-023",
+"cbm": 0.76,
+"tickets": 1,
+"month": "2026-10"
+},
+{
+"name": "SUP-024",
+"cbm": 0.0,
+"tickets": 0,
+"month": "2026-10"
+},
+{
+"name": "SUP-020",
+"cbm": 0.0,
+"tickets": 0,
+"month": "2026-10"
+},
+{
+"name": "SUP-012",
+"cbm": 0.0,
+"tickets": 0,
+"month": "2026-10"
+},
+{
+"name": "SUP-003",
+"cbm": 0.0,
+"tickets": 0,
+"month": "2026-10"
+},
+{
+"name": "SUP-004",
+"cbm": 0.0,
+"tickets": 0,
+"month": "2026-10"
+},
+{
+"name": "SUP-026",
+"cbm": 0.0,
+"tickets": 0,
+"month": "2026-10"
+},
+{
+"name": "SUP-014",
+"cbm": 0.0,
+"tickets": 0,
+"month": "2026-10"
+},
+{
+"name": "SUP-007",
+"cbm": 0.0,
+"tickets": 0,
+"month": "2026-10"
+},
+{
+"name": "SUP-005",
+"cbm": 0.0,
+"tickets": 0,
+"month": "2026-10"
+},
+{
+"name": "SUP-028",
+"cbm": 0.0,
+"tickets": 0,
+"month": "2026-10"
+},
+{
+"name": "SUP-001",
+"cbm": 0.0,
+"tickets": null,
+"month": "2026-10"
+},
+{
+"name": "SUP-013",
+"cbm": 0.0,
+"tickets": 0,
+"month": "2026-10"
+},
+{
+"name": "SUP-010",
+"cbm": 0.0,
+"tickets": 0,
+"month": "2026-10"
+},
+{
+"name": "SUP-002",
+"cbm": 0.0,
+"tickets": 0,
+"month": "2026-10"
 }
 ],
 "profitCompare": [
@@ -5973,17 +6337,27 @@ window.CRM_MONTHLY_SEED = {
 {
 "month_num": 6,
 "p2025": 166000,
-"p2026": 187000
+"p2026": 168000
 },
 {
 "month_num": 7,
 "p2025": 307000,
-"p2026": 202000
+"p2026": 229000
 },
 {
 "month_num": 8,
 "p2025": 379000,
-"p2026": 394000
+"p2026": 396000
+},
+{
+"month_num": 9,
+"p2025": 422000,
+"p2026": 721000
+},
+{
+"month_num": 10,
+"p2025": null,
+"p2026": null
 }
 ],
 "roles": {

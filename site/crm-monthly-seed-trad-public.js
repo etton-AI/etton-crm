@@ -1,5 +1,5 @@
 window.CRM_MONTHLY_SEED_TRAD = {
-"generatedAt": "2026-09-29",
+"generatedAt": "2026-11-02",
 "version": 1,
 "line": "trad",
 "months": [
@@ -131,7 +131,7 @@ window.CRM_MONTHLY_SEED_TRAD = {
 {
 "month": "2026-02",
 "tickets": 185,
-"profit": 480000
+"profit": 481000
 },
 {
 "month": "2026-03",
@@ -161,12 +161,17 @@ window.CRM_MONTHLY_SEED_TRAD = {
 {
 "month": "2026-08",
 "tickets": 189,
-"profit": 441000
+"profit": 438000
 },
 {
 "month": "2026-09",
-"tickets": 187,
-"profit": 366000
+"tickets": 189,
+"profit": 339000
+},
+{
+"month": "2026-10",
+"tickets": 175,
+"profit": 369000
 }
 ],
 "weeks": [],
@@ -6608,7 +6613,7 @@ window.CRM_MONTHLY_SEED_TRAD = {
 "name": "WHD",
 "month": "2026-02",
 "tickets": 10,
-"profit": 5000,
+"profit": 6000,
 "main": "PAUL"
 },
 {
@@ -7987,7 +7992,7 @@ window.CRM_MONTHLY_SEED_TRAD = {
 "name": "ITB",
 "month": "2026-08",
 "tickets": 1,
-"profit": 21000,
+"profit": 19000,
 "main": "ELAINE"
 },
 {
@@ -8280,7 +8285,7 @@ window.CRM_MONTHLY_SEED_TRAD = {
 {
 "name": "JTL",
 "month": "2026-09",
-"tickets": 2,
+"tickets": 1,
 "profit": 0,
 "main": "ELAINE"
 },
@@ -8288,7 +8293,7 @@ window.CRM_MONTHLY_SEED_TRAD = {
 "name": "MARUBENI",
 "month": "2026-09",
 "tickets": 3,
-"profit": 8000,
+"profit": 7000,
 "main": "COCO"
 },
 {
@@ -8297,6 +8302,13 @@ window.CRM_MONTHLY_SEED_TRAD = {
 "tickets": 1,
 "profit": 0,
 "main": "PAUL"
+},
+{
+"name": "TIMEX",
+"month": "2026-09",
+"tickets": 1,
+"profit": 0,
+"main": "COCO"
 },
 {
 "name": "QS",
@@ -8322,15 +8334,15 @@ window.CRM_MONTHLY_SEED_TRAD = {
 {
 "name": "CHT",
 "month": "2026-09",
-"tickets": 44,
-"profit": 138000,
+"tickets": 42,
+"profit": 117000,
 "main": "PAUL"
 },
 {
 "name": "LD",
 "month": "2026-09",
 "tickets": 3,
-"profit": 11000,
+"profit": 9000,
 "main": "ELAINE"
 },
 {
@@ -8343,36 +8355,36 @@ window.CRM_MONTHLY_SEED_TRAD = {
 {
 "name": "HHC",
 "month": "2026-09",
-"tickets": 3,
+"tickets": 5,
 "profit": 0,
 "main": "PAUL"
 },
 {
 "name": "QD",
 "month": "2026-09",
-"tickets": 4,
+"tickets": 3,
 "profit": 0,
 "main": "COCO"
 },
 {
 "name": "GTYD",
 "month": "2026-09",
-"tickets": 2,
+"tickets": 4,
 "profit": 0,
 "main": "COCO"
 },
 {
 "name": "YL",
 "month": "2026-09",
-"tickets": 2,
+"tickets": 1,
 "profit": 0,
 "main": "COCO"
 },
 {
 "name": "WYCJ",
 "month": "2026-09",
-"tickets": 24,
-"profit": 46000,
+"tickets": 22,
+"profit": 41000,
 "main": "COCO"
 },
 {
@@ -8400,7 +8412,7 @@ window.CRM_MONTHLY_SEED_TRAD = {
 "name": "DMX",
 "month": "2026-09",
 "tickets": 4,
-"profit": 0,
+"profit": 5000,
 "main": "COCO"
 },
 {
@@ -8413,8 +8425,8 @@ window.CRM_MONTHLY_SEED_TRAD = {
 {
 "name": "ZR",
 "month": "2026-09",
-"tickets": 22,
-"profit": 55000,
+"tickets": 21,
+"profit": 53000,
 "main": "COCO"
 },
 {
@@ -8427,8 +8439,8 @@ window.CRM_MONTHLY_SEED_TRAD = {
 {
 "name": "STLH",
 "month": "2026-09",
-"tickets": 8,
-"profit": 13000,
+"tickets": 9,
+"profit": 16000,
 "main": "PAUL"
 },
 {
@@ -8441,15 +8453,15 @@ window.CRM_MONTHLY_SEED_TRAD = {
 {
 "name": "TJ",
 "month": "2026-09",
-"tickets": 2,
-"profit": 5000,
+"tickets": 1,
+"profit": 0,
 "main": "ELAINE"
 },
 {
 "name": "ATL",
 "month": "2026-09",
 "tickets": 2,
-"profit": 5000,
+"profit": 6000,
 "main": "PAUL"
 },
 {
@@ -8476,8 +8488,8 @@ window.CRM_MONTHLY_SEED_TRAD = {
 {
 "name": "WHD",
 "month": "2026-09",
-"tickets": 15,
-"profit": 10000,
+"tickets": 19,
+"profit": 12000,
 "main": "PAUL"
 },
 {
@@ -8497,8 +8509,8 @@ window.CRM_MONTHLY_SEED_TRAD = {
 {
 "name": "TY",
 "month": "2026-09",
-"tickets": 2,
-"profit": 5000,
+"tickets": 1,
+"profit": 0,
 "main": "PAUL"
 },
 {
@@ -8516,10 +8528,283 @@ window.CRM_MONTHLY_SEED_TRAD = {
 "main": "COCO"
 },
 {
+"name": "FDYDP",
+"month": "2026-09",
+"tickets": 1,
+"profit": 0,
+"main": "PAUL"
+},
+{
 "name": "GY3",
 "month": "2026-09",
+"tickets": 4,
+"profit": 8000,
+"main": "ELAINE"
+},
+{
+"name": "BEACON",
+"month": "2026-10",
+"tickets": 7,
+"profit": 0,
+"main": "ELAINE"
+},
+{
+"name": "FANMASTER",
+"month": "2026-10",
+"tickets": 3,
+"profit": 5000,
+"main": "ELAINE"
+},
+{
+"name": "JTL",
+"month": "2026-10",
+"tickets": 5,
+"profit": 12000,
+"main": "ELAINE"
+},
+{
+"name": "YMJC",
+"month": "2026-10",
+"tickets": 1,
+"profit": 0,
+"main": "COCO"
+},
+{
+"name": "LJ",
+"month": "2026-10",
+"tickets": 1,
+"profit": 0,
+"main": "ELAINE"
+},
+{
+"name": "YY",
+"month": "2026-10",
+"tickets": 1,
+"profit": 0,
+"main": "ELAINE"
+},
+{
+"name": "CHT",
+"month": "2026-10",
+"tickets": 34,
+"profit": 123000,
+"main": "PAUL"
+},
+{
+"name": "LD",
+"month": "2026-10",
+"tickets": 5,
+"profit": 20000,
+"main": "ELAINE"
+},
+{
+"name": "HYH",
+"month": "2026-10",
+"tickets": 1,
+"profit": 7000,
+"main": "COCO"
+},
+{
+"name": "HHC",
+"month": "2026-10",
+"tickets": 3,
+"profit": 0,
+"main": "PAUL"
+},
+{
+"name": "QD",
+"month": "2026-10",
+"tickets": 5,
+"profit": 5000,
+"main": "COCO"
+},
+{
+"name": "YL",
+"month": "2026-10",
+"tickets": 1,
+"profit": 0,
+"main": "COCO"
+},
+{
+"name": "WYCJ",
+"month": "2026-10",
+"tickets": 18,
+"profit": 18000,
+"main": "COCO"
+},
+{
+"name": "FL",
+"month": "2026-10",
+"tickets": 1,
+"profit": 0,
+"main": "COCO"
+},
+{
+"name": "XLBB",
+"month": "2026-10",
+"tickets": 2,
+"profit": 0,
+"main": "PAUL"
+},
+{
+"name": "BN",
+"month": "2026-10",
+"tickets": 1,
+"profit": 0,
+"main": "PAUL"
+},
+{
+"name": "DMX",
+"month": "2026-10",
 "tickets": 3,
 "profit": 6000,
+"main": "COCO"
+},
+{
+"name": "YM",
+"month": "2026-10",
+"tickets": 6,
+"profit": 12000,
+"main": "Jayce"
+},
+{
+"name": "OLD",
+"month": "2026-10",
+"tickets": 1,
+"profit": 0,
+"main": "ELAINE"
+},
+{
+"name": "ZR",
+"month": "2026-10",
+"tickets": 18,
+"profit": 35000,
+"main": "COCO"
+},
+{
+"name": "YYYF",
+"month": "2026-10",
+"tickets": 1,
+"profit": 0,
+"main": "ELAINE"
+},
+{
+"name": "HD",
+"month": "2026-10",
+"tickets": 1,
+"profit": 0,
+"main": "ELAINE"
+},
+{
+"name": "STLH",
+"month": "2026-10",
+"tickets": 8,
+"profit": 9000,
+"main": "PAUL"
+},
+{
+"name": "HY",
+"month": "2026-10",
+"tickets": 4,
+"profit": 0,
+"main": "ELAINE"
+},
+{
+"name": "TJ",
+"month": "2026-10",
+"tickets": 3,
+"profit": 9000,
+"main": "ELAINE"
+},
+{
+"name": "YX2",
+"month": "2026-10",
+"tickets": 1,
+"profit": 9000,
+"main": "ELAINE"
+},
+{
+"name": "ATL",
+"month": "2026-10",
+"tickets": 1,
+"profit": 6000,
+"main": "PAUL"
+},
+{
+"name": "SW",
+"month": "2026-10",
+"tickets": 3,
+"profit": 16000,
+"main": "ELAINE"
+},
+{
+"name": "SD",
+"month": "2026-10",
+"tickets": 3,
+"profit": 6000,
+"main": "ELAINE"
+},
+{
+"name": "WHD",
+"month": "2026-10",
+"tickets": 16,
+"profit": 15000,
+"main": "PAUL"
+},
+{
+"name": "HLM",
+"month": "2026-10",
+"tickets": 1,
+"profit": 0,
+"main": "FANNIE"
+},
+{
+"name": "RS",
+"month": "2026-10",
+"tickets": 2,
+"profit": 0,
+"main": "PAUL"
+},
+{
+"name": "XDQC",
+"month": "2026-10",
+"tickets": 1,
+"profit": 0,
+"main": "PAUL"
+},
+{
+"name": "YD",
+"month": "2026-10",
+"tickets": 3,
+"profit": 7000,
+"main": "ELAINE"
+},
+{
+"name": "SWS",
+"month": "2026-10",
+"tickets": 1,
+"profit": 0,
+"main": "COCO"
+},
+{
+"name": "TY",
+"month": "2026-10",
+"tickets": 3,
+"profit": 6000,
+"main": "PAUL"
+},
+{
+"name": "JX2",
+"month": "2026-10",
+"tickets": 5,
+"profit": 0,
+"main": "COCO"
+},
+{
+"name": "GY3",
+"month": "2026-10",
+"tickets": 1,
+"profit": 0,
 "main": "ELAINE"
 }
 ],
@@ -9168,6 +9453,12 @@ window.CRM_MONTHLY_SEED_TRAD = {
 "sales2": "",
 "assistant": ""
 },
+"YL": {
+"importer": "",
+"main": "COCO",
+"sales2": "",
+"assistant": ""
+},
 "ZSSC": {
 "importer": "",
 "main": "COCO",
@@ -9181,12 +9472,6 @@ window.CRM_MONTHLY_SEED_TRAD = {
 "assistant": ""
 },
 "HYH": {
-"importer": "",
-"main": "COCO",
-"sales2": "",
-"assistant": ""
-},
-"YL": {
 "importer": "",
 "main": "COCO",
 "sales2": "",
@@ -9207,6 +9492,12 @@ window.CRM_MONTHLY_SEED_TRAD = {
 "YCSM": {
 "importer": "",
 "main": "ELAINE",
+"sales2": "",
+"assistant": ""
+},
+"D1M": {
+"importer": "",
+"main": "PAUL",
 "sales2": "",
 "assistant": ""
 },
@@ -9234,9 +9525,9 @@ window.CRM_MONTHLY_SEED_TRAD = {
 "sales2": "",
 "assistant": ""
 },
-"D1M": {
+"ETTON": {
 "importer": "",
-"main": "PAUL",
+"main": "COCO",
 "sales2": "",
 "assistant": ""
 },
@@ -9271,12 +9562,6 @@ window.CRM_MONTHLY_SEED_TRAD = {
 "assistant": ""
 },
 "LWT": {
-"importer": "",
-"main": "COCO",
-"sales2": "",
-"assistant": ""
-},
-"ETTON": {
 "importer": "",
 "main": "COCO",
 "sales2": "",
@@ -9338,7 +9623,7 @@ window.CRM_MONTHLY_SEED_TRAD = {
 },
 "YM": {
 "importer": "",
-"main": "PAUL",
+"main": "Jayce",
 "sales2": "",
 "assistant": ""
 },
@@ -9552,6 +9837,12 @@ window.CRM_MONTHLY_SEED_TRAD = {
 "sales2": "",
 "assistant": ""
 },
+"FDYDP": {
+"importer": "",
+"main": "PAUL",
+"sales2": "",
+"assistant": ""
+},
 "HYMT": {
 "importer": "",
 "main": "PAUL",
@@ -9559,6 +9850,12 @@ window.CRM_MONTHLY_SEED_TRAD = {
 "assistant": ""
 },
 "AKT": {
+"importer": "",
+"main": "COCO",
+"sales2": "",
+"assistant": ""
+},
+"GTYD": {
 "importer": "",
 "main": "COCO",
 "sales2": "",
@@ -9576,9 +9873,9 @@ window.CRM_MONTHLY_SEED_TRAD = {
 "sales2": "",
 "assistant": ""
 },
-"GTYD": {
+"HM": {
 "importer": "",
-"main": "COCO",
+"main": "ELAINE",
 "sales2": "",
 "assistant": ""
 },
@@ -9594,9 +9891,15 @@ window.CRM_MONTHLY_SEED_TRAD = {
 "sales2": "",
 "assistant": ""
 },
-"HM": {
+"XDQC": {
 "importer": "",
-"main": "ELAINE",
+"main": "PAUL",
+"sales2": "",
+"assistant": ""
+},
+"XLBB": {
+"importer": "",
+"main": "PAUL",
 "sales2": "",
 "assistant": ""
 },
@@ -9615,6 +9918,18 @@ window.CRM_MONTHLY_SEED_TRAD = {
 "BD2": {
 "importer": "",
 "main": "COCO",
+"sales2": "",
+"assistant": ""
+},
+"SWS": {
+"importer": "",
+"main": "COCO",
+"sales2": "",
+"assistant": ""
+},
+"HLM": {
+"importer": "",
+"main": "FANNIE",
 "sales2": "",
 "assistant": ""
 },
@@ -9684,6 +9999,12 @@ window.CRM_MONTHLY_SEED_TRAD = {
 "sales2": "",
 "assistant": ""
 },
+"HX2": {
+"importer": "",
+"main": "COCO",
+"sales2": "",
+"assistant": ""
+},
 "ZXR": {
 "importer": "",
 "main": "COCO",
@@ -9691,12 +10012,6 @@ window.CRM_MONTHLY_SEED_TRAD = {
 "assistant": ""
 },
 "HQD": {
-"importer": "",
-"main": "COCO",
-"sales2": "",
-"assistant": ""
-},
-"HX2": {
 "importer": "",
 "main": "COCO",
 "sales2": "",
