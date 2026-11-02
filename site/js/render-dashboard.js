@@ -26,7 +26,8 @@
   };
 
   M.yoyYtdHtml = function (metric) {
-    return M.pctHtml(M.pctChange(M.yearSum('2026', metric, 9), M.yearSum('2025', metric, 9)));
+    const n = M.latestYearMonth();
+    return M.pctHtml(M.pctChange(M.yearSum('2026', metric, n), M.yearSum('2025', metric, n)));
   };
 
   function renderDashboard() {
@@ -80,11 +81,12 @@
   M.renderDashboard = renderDashboard;
 
   function renderYoyPanel() {
-    // 利润同比（2025 vs 2026），传统与电商分列对比，顶部合计
+    // 利润同比（2025 vs 2026），传统与电商分列对比，顶部合计（月份动态到今年最新月）
+    const maxMonth = M.latestYearMonth();
     const tables = M.ALL_LINES.map((line) => {
       const mm = M.LINE_MONTH_MAPS[line];
       let rows = '', t25 = 0, t26 = 0;
-      for (let mmo = 1; mmo <= 9; mmo++) {
+      for (let mmo = 1; mmo <= maxMonth; mmo++) {
         const k = String(mmo).padStart(2, '0');
         const m25 = mm.get('2025-' + k);
         const m26 = mm.get('2026-' + k);
@@ -94,13 +96,13 @@
         if (p26 != null) t26 += p26;
         rows += '<tr><td>' + mmo + '月</td><td class="num">' + M.fmtMoney(p25) + '</td><td class="num">' + M.fmtMoney(p26) + '</td><td class="num">' + M.pctHtml(M.pctChange(p26, p25)) + '</td></tr>';
       }
-      rows += '<tr style="border-top:2px solid var(--border);font-weight:600"><td>累计(1-9月)</td><td class="num">' + M.fmtMoney(t25) + '</td><td class="num">' + M.fmtMoney(t26) + '</td><td class="num">' + M.pctHtml(M.pctChange(t26, t25)) + '</td></tr>';
+      rows += '<tr style="border-top:2px solid var(--border);font-weight:600"><td>累计(1-' + maxMonth + '月)</td><td class="num">' + M.fmtMoney(t25) + '</td><td class="num">' + M.fmtMoney(t26) + '</td><td class="num">' + M.pctHtml(M.pctChange(t26, t25)) + '</td></tr>';
       return '<div class="panel" style="margin-bottom:0"><h3><span style="color:' + M.LINE_COLORS[line] + '">●</span> ' + M.LINE_PROFILE[line].label + '</h3>'
         + '<table><thead><tr><th>月份</th><th class="num">2025</th><th class="num">2026</th><th class="num">同比</th></tr></thead><tbody>' + rows + '</tbody></table></div>';
     }).join('');
 
-    const t25 = M.combinedYearSum('2025', 'profit', 9);
-    const t26 = M.combinedYearSum('2026', 'profit', 9);
+    const t25 = M.combinedYearSum('2025', 'profit', maxMonth);
+    const t26 = M.combinedYearSum('2026', 'profit', maxMonth);
     return '<div class="panel"><h3>利润同比（2025 vs 2026）<span class="hint">合计 ' + M.fmtMoney(t25) + ' → ' + M.fmtMoney(t26) + ' ' + M.pctHtml(M.pctChange(t26, t25)) + '</span></h3>'
       + '<div class="grid-2">' + tables + '</div></div>';
   }

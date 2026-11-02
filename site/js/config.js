@@ -95,6 +95,15 @@
     return i > 0 ? M.COMBINED_MONTHS[i - 1] : null;
   };
 
+  /** 数据里 2026 年最新月份号（1-12），用于「今年至今」的同比/累计口径 */
+  M.latestYearMonth = function () {
+    let n = 0;
+    for (const m of M.COMBINED_MONTHS) {
+      if (m.slice(0, 4) === '2026') n = Math.max(n, parseInt(m.slice(5, 7), 10));
+    }
+    return n || 12;
+  };
+
   M.LINE = (localStorage.getItem(M.LINE_KEY) === 'trad') ? 'trad' : 'ec';
   M.SEED = M.SEEDS[M.LINE];
   M.prof = function () { return M.LINE_PROFILE[M.LINE]; };

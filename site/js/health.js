@@ -108,14 +108,15 @@
     return { months, volSeries, profitSeries };
   };
 
-  /** 客户某年 1-9 月同期累计体积（同比下滑预警用） */
+  /** 客户某年 1-N 月同期累计体积（同比下滑预警用，N=今年最新月份） */
   M.sumCustYtd = function (name, year) {
     let s = 0;
     const map = M.custSeries.get(name);
     if (!map) return 0;
+    const n = M.latestYearMonth();
     for (const [m, rec] of map) {
       if (!m.startsWith(year)) continue;
-      if (parseInt(m.slice(5, 7), 10) > 9) continue; // 只比 1-9 月同期
+      if (parseInt(m.slice(5, 7), 10) > n) continue; // 只比 1-N 月同期
       const v = M.volOf(rec);
       if (v != null) s += v;
     }
